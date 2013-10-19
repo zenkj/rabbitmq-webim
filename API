@@ -1,0 +1,21 @@
+1. basic functions:
+get   /                   static   show main page
+get   /login              static   show login/signup page
+post  /login              dynamic  perform login action
+post  /signup             dynamic  perform signup action
+post  /logout             dynamic  perform logout action
+post  /msg                dynamic  send messages to others
+get   /friendlist         dynamic  get friend list
+get   /hello              dynamic  long polling request
+
+
+2. advanced functions:
+get   /userlist           dynamic  get all user's list
+
+put   /friendrequest      dynamic  request friendship with a user
+put   /friendrefuse       dynamic  refuse to become friend with request user
+put   /friendconfirm      dynamic  confirm friendship with request user
+
+put   /dropblack          dynamic  drop one friend/user into black list
+
+post  /filemsg            dynamic  upload one file as a message

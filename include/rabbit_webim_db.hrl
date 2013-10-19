@@ -1,0 +1,2 @@
+-record(wim_user, {id, name, password, email}).
+-record(wim_friend, {uid, fid}).

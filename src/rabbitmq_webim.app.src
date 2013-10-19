@@ -1,0 +1,8 @@
+{application, rabbitmq_webim,
+ [{description, "Rabbitmq Embedded WEB Instant Messaging Service"},
+  {vsn, "0.01"},
+  {modules, []},
+  {registered, []},
+  {mod, {rabbit_webim, []}},
+  {env, [{listener, [{port, 20000}]}]},
+  {applications, [kernel, stdlib, rabbit, rabbitmq_web_dispatch, amqp_client]}]}.
