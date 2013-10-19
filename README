@@ -1,3 +1,4 @@
+# Overview
 This is a web Instant Messaging plugin. This is the rabbitmq-plugin
 port of the original webim, which is implemented based on node.js.
 
@@ -36,4 +37,18 @@ The process corresponding to the active user maintain one queue to store
 the received messages from the mq. these messages will be long-polled by
 the users via a browser.
 
+# Installation
+* make sure erlang/OTP is installed correctly
+* download rabbitmq from http://www.rabbitmq.com, unzip/install it.
+* download the current packaged version of webim from download directory,
+  put it into rabbitmq's plugins directory
+* run command as follows to enable the webim plugin:
+    rabbitmq-plugins enable rabbitmq-webim
+* start rabbitmq:
+    rabbitmq-server
+* now access http://localhost:8000 to access webim.
 
+# Compilation
+reference rabbitmq plugin development guide:
+    http://www.rabbitmq.com/plugin-development.html
+put rabbitmq-webim input the rabbitmq-public-umbrella directory, then hacking.
