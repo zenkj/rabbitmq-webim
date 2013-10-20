@@ -186,10 +186,11 @@ $(document).ready(function() {
         var ebdom = $('#emotion_button');
         var p = ebdom.position();
         var pwidth = ebdom.parent().width();
+        var pheight = ebdom.parent().height();
         var top = p.top;
         var left = p.left - 15;
         left = left < 0 ? 0 : left;
-        eldom.css('bottom', top);
+        eldom.css('bottom', pheight - top);
         if (left + elwidth < pwidth) {
             eldom.css('left', left);
             eldom.css('right', 'auto');
@@ -311,7 +312,7 @@ $(document).ready(function() {
                 for (var i=0; i<el.length; i++) {
                     var file = el[i].file;
                     var hint = el[i].hint;
-                    $('<img id="emotion_icon_' + file + '" class="emotion_icon" src="/static/img/emotion/' + file + '.gif" alt="' + hint + '"/>').appendTo(eldom);
+                    $('<img id="emotion_icon_' + file + '" class="emotion_icon" src="/static/img/emotion/' + file + '.gif" title="' + hint + '"/>').appendTo(eldom);
                     if ((i+1)%10 == 0)
                         $('<br/>').appendTo(eldom);
                 }
