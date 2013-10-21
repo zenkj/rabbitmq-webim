@@ -238,8 +238,8 @@ handle_cast({Fid, leave}, State=#state{friends=Fs}) ->
     State1 = maybe_send_msg(State#state{friends=Fs1, fchanged=true}),
     {noreply, State1}.
 
-handle_info(timeout, State = #state{userid=_UserId}) ->
-    %%rabbit_webim_webserver:leave(UserId, "time out, quit"),
+handle_info(timeout, State = #state{userid=UserId}) ->
+    rabbit_webim_webserver:leave(UserId, "time out, quit"),
     {noreply, State};
 handle_info(#'basic.consume_ok'{}, State) ->
     {noreply, State};
